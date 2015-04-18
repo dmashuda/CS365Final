@@ -10,12 +10,11 @@ import java.util.stream.Collectors;
  */
 public class Tester {
     public static void main (String args[]) throws IOException {
-        List<String> words = Dictionary.loadFile("/Users/dan/Documents/CS365/assignment4/src/main/resources/Dictionary.txt");
+
+        String filePath = ClassLoader.getSystemResource("Dictionary.txt").getPath();
+        List<String> words = Dictionary.loadFile(filePath);
 
 
-        for (int i = 0; i < 100; i++){
-            words.addAll(Dictionary.loadFile("/Users/dan/Documents/CS365/assignment4/src/main/resources/Dictionary.txt"));
-        }
         long beforepar = System.currentTimeMillis();
 
         List<String> parstream = words.stream().filter(e -> e.contains("special")).collect(Collectors.toCollection(ArrayList::new));
