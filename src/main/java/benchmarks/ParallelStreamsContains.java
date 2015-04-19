@@ -10,7 +10,12 @@ import java.util.stream.Collectors;
 public class ParallelStreamsContains extends Benchmark<String> {
 
     @Override
-    public void doWork(List<String> list, String val) {
+    protected void doWork(List<String> list, String val) {
         list.parallelStream().filter(e -> e.contains(val)).collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    @Override
+    protected void setUp() {
+
     }
 }

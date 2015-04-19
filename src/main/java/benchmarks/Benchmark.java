@@ -7,9 +7,12 @@ import java.util.List;
  */
 public abstract class Benchmark<T> {
 
-    public abstract void doWork(List<T> list, T val);
+    protected abstract void doWork(List<T> list, T val);
+
+    protected abstract void setUp();
 
     public long runBenchMark(List<T> list, T val){
+        setUp();
         System.gc();
         long before = System.currentTimeMillis();
         doWork(list, val);

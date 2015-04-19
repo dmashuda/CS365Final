@@ -9,13 +9,18 @@ import java.util.List;
 public class LoopContains extends Benchmark<String> {
 
     @Override
-    public void doWork(List<String> list, String val) {
+    protected void doWork(List<String> list, String val) {
         List<String> newList = new LinkedList<>();
         for (String s: list){
             if (s.contains(val)){
                 newList.add(s);
             }
         }
+
+    }
+
+    @Override
+    protected void setUp() {
 
     }
 }
