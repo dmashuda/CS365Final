@@ -7,7 +7,7 @@ public class WorkRange {
     private Integer start;
     private Integer end;
 
-    public WorkRange(Integer end, Integer start) {
+    public WorkRange(Integer start, Integer end) {
         this.end = end;
         this.start = start;
     }

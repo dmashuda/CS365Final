@@ -10,6 +10,7 @@ public abstract class Benchmark<T> {
     protected abstract void doWork(List<T> list, T val);
 
     protected abstract void setUp();
+    protected abstract void tearDown();
 
     public long runBenchMark(List<T> list, T val){
         setUp();
@@ -17,7 +18,9 @@ public abstract class Benchmark<T> {
         long before = System.currentTimeMillis();
         doWork(list, val);
         long after = System.currentTimeMillis();
-
+        tearDown();
         return  after - before;
     }
+
+
 }

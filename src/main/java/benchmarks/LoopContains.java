@@ -23,4 +23,9 @@ public class LoopContains extends Benchmark<String> {
     protected void setUp() {
 
     }
+
+    @Override
+    protected void tearDown() {
+
+    }
 }

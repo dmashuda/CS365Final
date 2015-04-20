@@ -18,4 +18,9 @@ public class StreamsContains extends Benchmark<String> {
     protected void setUp() {
 
     }
+
+    @Override
+    protected void tearDown() {
+
+    }
 }
