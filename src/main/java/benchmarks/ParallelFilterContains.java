@@ -14,8 +14,6 @@ public class ParallelFilterContains extends Benchmark<String> {
     @Override
     protected void doWork(List<String> list, String val) {
         List<String> results = filter.filter(list, currentVal -> currentVal.contains(val));
-        System.out.println("Size me: " +results.size());
-
     }
 
     @Override

@@ -12,9 +12,6 @@ public class ParallelStreamsContains extends Benchmark<String> {
     @Override
     protected void doWork(List<String> list, String val) {
         List results = list.parallelStream().filter(e -> e.contains(val)).collect(Collectors.toCollection(ArrayList::new));
-
-        System.out.println("Size java: " + results.size());
-
     }
 
     @Override

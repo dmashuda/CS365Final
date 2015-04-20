@@ -35,6 +35,7 @@ public class FilterWorker<T> implements Runnable {
                 return;
             }
 
+
             if (workStep == null){
                 throw new IllegalStateException("Must specify a work step before inputting range");
             }
@@ -44,7 +45,7 @@ public class FilterWorker<T> implements Runnable {
             ListIterator<T> listIterator = workStep.getValues().listIterator(currentRange.getStart());
             BaseFilter<T> filter = workStep.getFilter();
 
-            while (listIterator.hasNext() && listIterator.nextIndex() <= currentRange.getEnd()){
+            while (listIterator.hasNext() && listIterator.nextIndex() < currentRange.getEnd()){
                 T val = listIterator.next();
                 if (filter.applyFilter(val)){
                     results.add(val);

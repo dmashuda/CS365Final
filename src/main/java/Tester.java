@@ -18,6 +18,7 @@ public class Tester {
         List<String> dictionary = Dictionary.loadFile(filePath);
 
         List<String> benchList = new ArrayList<>();
+
         StreamsContains streamBench = new StreamsContains();
         ParallelFilterContains parallelFilterBench = new ParallelFilterContains();
         ParallelStreamsContains parStreamBench = new ParallelStreamsContains();
@@ -28,10 +29,10 @@ public class Tester {
                 benchList.addAll(dictionary);
             }
             System.out.println("Size: " +benchList.size());
-            System.out.println("Stream: "+ streamBench.runBenchMark(benchList, "s")+"ms");
+            System.out.println("Stream: "+ streamBench.runBenchMark(benchList, "special")+"ms");
             System.out.println("Parallel: "+ parallelFilterBench.runBenchMark(benchList, "special")+"ms");
-            System.out.println("ParStream: "+ parStreamBench.runBenchMark(benchList, "s")+"ms");
-            System.out.println("For Loop: " + loopBench.runBenchMark(benchList, "s")+"ms");
+            System.out.println("ParStream: "+ parStreamBench.runBenchMark(benchList, "special")+"ms");
+            System.out.println("For Loop: " + loopBench.runBenchMark(benchList, "special")+"ms");
             System.out.println();
         }
 
