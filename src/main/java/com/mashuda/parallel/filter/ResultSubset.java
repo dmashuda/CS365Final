@@ -1,4 +1,4 @@
-package com.mashuda.parallel;
+package com.mashuda.parallel.filter;
 
 import java.util.LinkedList;
 import java.util.List;

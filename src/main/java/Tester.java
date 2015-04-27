@@ -2,7 +2,7 @@ import benchmarks.contains.*;
 import file.util.Dictionary;
 
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ public class Tester {
         String filePath = ClassLoader.getSystemResource("Dictionary.txt").getPath();
         List<String> dictionary = Dictionary.loadFile(filePath);
 
-        List<String> benchList = new LinkedList<>();
+        List<String> benchList = new ArrayList<>();
 
         StreamsContains streamBench = new StreamsContains();
         ParallelFilterContains parallelFilterBench = new ParallelFilterContains();
@@ -29,11 +29,11 @@ public class Tester {
                 benchList.addAll(dictionary);
             }
             System.out.println("Size: " +benchList.size());
-           // System.out.println("Stream: "+ streamBench.runBenchMark(benchList, "special")+"ms");
+            System.out.println("Stream: "+ streamBench.runBenchMark(benchList, "special")+"ms");
             System.out.println("Parallel: "+ parallelFilterBench.runBenchMark(benchList, "special")+"ms");
             System.out.println("Parallel No Overhead: "+ parallelFilterContainsNoOverhead.runBenchMark(benchList, "special")+"ms");
             System.out.println("ParStream: "+ parStreamBench.runBenchMark(benchList, "special")+"ms");
-            //System.out.println("For Loop: " + loopBench.runBenchMark(benchList, "special")+"ms");
+            System.out.println("For Loop: " + loopBench.runBenchMark(benchList, "special")+"ms");
             System.out.println();
         }
 

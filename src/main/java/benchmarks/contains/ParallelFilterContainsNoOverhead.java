@@ -1,7 +1,7 @@
 package benchmarks.contains;
 
 import benchmarks.Benchmark;
-import com.mashuda.parallel.ParallelFilter;
+import com.mashuda.parallel.filter.ParallelFilter;
 
 import java.util.List;
 

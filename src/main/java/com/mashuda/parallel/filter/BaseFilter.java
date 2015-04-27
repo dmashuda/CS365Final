@@ -1,4 +1,4 @@
-package com.mashuda.parallel;
+package com.mashuda.parallel.filter;
 
 /**
  * Created by dan on 4/20/15.

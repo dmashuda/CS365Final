@@ -13,6 +13,19 @@ public abstract class Benchmark<T, V> {
     protected abstract void tearDown();
 
     public long runBenchMark(List<T> list, V val){
+        int num_average = 10;
+
+        long total = 0;
+
+        for (int i = 0; i<num_average;i++){
+            total += testWork(list, val)/num_average;
+        }
+
+        return total;
+
+    }
+
+    private long testWork(List<T> list, V val){
         setUp();
         System.gc();
         long before = System.currentTimeMillis();
